@@ -1,0 +1,49 @@
+Describe your unit testing approach for each of the three features.
+
+•	To what extent was your approach aligned to the software requirements?
+The testing approach I took for each of the three features throughout the course (Contact, Task and appointment services) consisted mostly Functional and Unit testing. I used all the requirements that were requested as 
+steppingstones or a checklist to ensure that every requirement was met. Requirements such as the first name string not having more than 10 characters, being able to add tasks with a unique ID and having a required appointment date field. 
+
+•	Defend the overall quality of your JUnit tests. In other words, how do you know your JUnit tests were effective based on the coverage percentage? How did you ensure that your code was efficient?
+All my testing had a coverage percentage above 80 percent which is a great way to ensure the JUnit tests were effective. I tested every feature often and throughout the entire process to help catch errors quickly and to ensure all 
+requirements had been taken care of. This ensured the code was effective and efficient. I plan on commenting more on my code to help with future code, this will also help with code quality and ensure any issues within the code can be easily found and fixed. 
+@Test
+	@DisplayName("Task Description cannot have more than 50 characters")
+	void testTaskDescWithMoreThanFiftyCharacters() {
+		Task task = new Task("Name", "123456789 is nine characters long" 
+				+ "123456789 is another nine characters long" 
+				+ "123456789 is another nine characters long"
+				+ "123456789 is another nine characters long");
+		if (task.getTaskDesc().length() > 50) {
+			fail("Task Description has more than 50 characters.");
+
+Testing Techniques
+•	What were the software testing techniques that you employed in this project? Describe their characteristics using specific details.
+I used mostly unit testing for this project, verifying individual functions in isolation. I used JUnit testing since we were utilizing Java. The unit testing is great for detecting issues early in the process and can help speed up the coding process overall. 
+Unit testing was also helpful ensuring all the given requirements were met.
+The next step would be to do integration testing in order to integrate the project into the clients existing system.
+
+•	What are the other software testing techniques that you did not use for this project? Describe their characteristics using specific details.
+1.	Integration: How different components work together, ensuring all the functions are properly working together for the system.
+2.	Regression: is an automatically re-running test after any code changes to detect new bugs.
+3.	System: This testing ensures the complete system meets all requirements presented.
+
+•	For each of the techniques you discussed, explain the practical uses and implications for different software development projects and situations.
+1.	Unit: Some of the practical uses of unit testing are, catching bugs early, documents code behavior, enables continuous integration and can reduce any costs of fixes. Some of the implications are, time investment is upfront, requires good design and is not a substitute for other testing.
+2.	Integration: Some of the practical uses of integration testing are, verifying module interactions, catches interface issues and it is used after unit testing. Some of the implications are, it is more complex than unit testing, can uncover hidden issues and it will need more coordination than unit testing.
+3.	Regression: Some of the practical uses of regression testing are, ensuring existing functionality still works, critical updates and is often automated. Some of the implications are, the test suite must be maintained, can grow very large over time and is vital for continuous integration.
+4.	System: Some of the practical uses of system testing are, that it validates the entire system, it is performed in a real (or close to) environment (this includes all subsystems and external dependencies) and covers end-to-end scenarios (user scenarios, performance tests and security checks). Some of the implications are, 
+it requires complete application, resource-intensive and can reveal critical flaws before deployment.
+
+
+Mindset
+•	Assess the mindset that you adopted working on this project. In acting as a software tester, to what extent did you employ caution? Why was it important to appreciate the complexity and interrelationships of the code you were testing? Provide specific examples to illustrate your claims.
+I did employ some caution on this project. Knowing the requirements were pretty straight forward I wasn’t too worried. The main reason I was a bit cautious was due to the threat of over testing. If the code is super complex, over testing or even introducing a new bug can be more of a threat.
+
+•	Assess the ways you tried to limit bias in your review of the code. On the software developer side, can you imagine that bias would be a concern if you were responsible for testing your own code? Provide specific examples to illustrate your claims.
+Since the nature of the code for this project was smaller, it ensured through review and unbiased decisions. If the code was lengthier and more complex, the developer could have more of an ego which could lead to bias. This ego could lead to overlooking critical errors.
+
+•	Finally, evaluate the importance of being disciplined in your commitment to quality as a software engineering professional. Why is it important not to cut corners when it comes to writing or testing code? How do you plan to avoid technical debt as a practitioner in the field? Provide specific examples to illustrate your claims.
+Being disciplined in the commitment to quality as a software engineering professional is essential for building reliable, maintainable, and secure software. Cutting corners in writing or testing code may save time initially but often leads to hidden bugs, technical debt, and long-term maintenance issues. A strong focus on quality fosters trust,
+prevents costly failures, and ensures your code remains scalable and understandable over time. To avoid technical debt, it’s important to follow clean code principles, write thorough tests, refactor regularly, document clearly, and engage in meaningful code reviews. Ultimately, maintaining high standards reflects professional integrity and a 
+long-term mindset in software development. Being disciplined in your commitment to quality is not about perfectionism, it’s about professional integrity.
